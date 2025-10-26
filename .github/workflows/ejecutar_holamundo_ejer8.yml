@@ -30,4 +30,4 @@ jobs:
         javac src/HolaMundo.java
     - name: ejecutar programa
       run: |
-        java HolaMundo
+        java src/HolaMundo
