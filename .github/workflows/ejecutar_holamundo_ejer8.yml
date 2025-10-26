@@ -1,0 +1,33 @@
+# El nombre del flujo de trabajo. Es el título que se mostrará en la pestaña Actions de GitHub
+name: Git Action que ejecuta "Hola mundo" en java
+
+# El evento que lo activa: un push
+on: [push]
+    
+
+# Los trabajos que se ejecutarán
+jobs:
+  # El nombre del trabajo. Es arbitrario, podría ser test, deploy.... 
+  build:
+    # El sistema operativo donde se ejecutará. GitHub usará una máquina virtual Linux con ubuntu
+    runs-on: ubuntu-latest
+
+    # Lista de acciones o comandos que se ejecutarán dentro del job
+    steps:
+    # Este paso descarga el contenido del repositorio en la máquina virtual de GitHub. E snecesario si en pasos posteriores se emplean archivos dle proyecto
+    - name: clona el repositorio
+      uses: actions/checkout@v5
+      
+    - name: configurar java
+      uses: actions/setup-java@v5
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+    
+    # Un paso para ejecutar un script de prueba
+    - name: compilar programa
+      run: |
+        javac HolaMundo.javas
+    - name: ejecutar programa
+      run: |
+        java HolaMundo
