@@ -29,5 +29,6 @@ jobs:
       run: |
         javac src/HolaMundo.java
     - name: ejecutar programa
+      #-cp indica el classpath, la ruta donde están las clases compiladas
       run: |
-        java src/HolaMundo
+        java -cp src HolaMundo
