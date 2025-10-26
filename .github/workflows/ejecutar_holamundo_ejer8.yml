@@ -27,7 +27,7 @@ jobs:
     # Un paso para ejecutar un script de prueba
     - name: compilar programa
       run: |
-        javac HolaMundo.javas
+        javac HolaMundo.java
     - name: ejecutar programa
       run: |
         java HolaMundo
