@@ -14,7 +14,7 @@ jobs:
 
     # Lista de acciones o comandos que se ejecutarán dentro del job
     steps:
-    # Este paso descarga el contenido del repositorio en la máquina virtual de GitHub. E snecesario si en pasos posteriores se emplean archivos dle proyecto
+    # Este paso descarga el contenido del repositorio en la máquina virtual de GitHub. Es necesario si en pasos posteriores se emplean archivos dle proyecto
     - name: clona el repositorio
       uses: actions/checkout@v5
       
@@ -26,7 +26,7 @@ jobs:
     
     # Un paso para ejecutar un script de prueba
     - name: compilar programa
-      run: |
+      run: |  # el | (tubería) no sería neceasria. | indieca que vamos a ejecutar varias líneas seguidas. Si solo hay una línea no hace falta
         javac src/HolaMundo.java
     - name: ejecutar programa
       #-cp indica el classpath, la ruta donde están las clases compiladas
